@@ -3,7 +3,7 @@
 
 template <class a_type> class Array
 {
-	private:
+	protected:
 		a_type m_array;
 		int m_length;
 		int m_start_index;
