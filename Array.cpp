@@ -1,13 +1,13 @@
 #include "Array.h"
 
 template<class a_type>
-Array<a_type>::Array()
+inline Array<a_type>::Array()
 {
 
 }
 
 template<class a_type>
-Array<a_type>::Array(int length, int start_index)
+inline Array<a_type>::Array(int length, int start_index)
 {
 	//m_length = new int;
 	m_length = length;
@@ -17,7 +17,7 @@ Array<a_type>::Array(int length, int start_index)
 }
 
 template<class a_type>
-Array<a_type>::Array(const Array & obj)
+inline Array<a_type>::Array(const Array & obj)
 {
 	m_array = new a_type[*obj.getLength];
 	*m_array = *obj.m_array;
@@ -29,7 +29,7 @@ Array<a_type>::Array(const Array & obj)
 }
 
 template<class a_type>
-Array<a_type>::~Array()
+inline Array<a_type>::~Array()
 {
 	delete m_array;
 	delete m_length;
@@ -57,6 +57,8 @@ int Array<a_type>::getStartIndex()
 template<class a_type>
 void Array<a_type>::setStartIndex(int start_index)
 {
+	m_start_index = start_index;
+
 }
 
 template<class a_type>
@@ -68,6 +70,7 @@ int Array<a_type>::getLength()
 template<class a_type>
 void Array<a_type>::setLength(int length)
 {
+	m_length = length;
 }
 
 

@@ -5,7 +5,8 @@ using namespace std;
 int main()
 {
 	cout << "Hello World";
-	Array<char> h(5,0);
+	Array<int> h;
+	h.setLength(5);
 
 	return 0;
 }
