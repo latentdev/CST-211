@@ -38,13 +38,13 @@ inline Array<a_type>::~Array()
 template<class a_type>
 inline Array<a_type>& Array<a_type> ::operator=(Array & rhs)
 {
-	return
+	
 }
 
 template<class a_type>
 inline Array<a_type>& Array<a_type> ::operator[](int index)
 {
-	return
+	
 }
 
 template<class a_type>
