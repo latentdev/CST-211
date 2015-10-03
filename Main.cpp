@@ -1,3 +1,20 @@
+/*************************************************************************
+*Author:					Nicholas Olson
+*Date Created:				9-30-15
+*Last Modification Date:	10-3-15
+*Lab Number:				CST 211 Assignment 1
+*Filename:					Main.cpp
+*
+*Overview:
+*	This program a driver to show the different uses of my custom array class
+*
+*Input:
+*	All the input is already set in the driver file. Only exists to show the uses of my array class.
+*
+*Output:
+*	Main will walk through several operation involving the use of my array class and output it's progress and the results
+**************************************************************************/
+
 #include <iostream>
 #include "Array.h"
 #include "Array.cpp"
@@ -12,12 +29,12 @@ int main()
 	cout << "The contents of Array h are: ";
 	for (int i = 0; i < h.getLength(); i++)
 	{
-		cout << h[i]<<",";
+		cout << h[i] << ",";
 	}
-	cout << endl<< "Changing h start index to -1!"<<endl;
+	cout << endl << "Changing h start index to -1!" << endl;
 	
 	h.setStartIndex(-1);
-	cout << "Array h start index is: " << h.getStartIndex() <<endl;
+	cout << "Array h start index is: " << h.getStartIndex() << endl;
 
 	cout << "The contents of Array h are: ";
 	for (int i = -1; i < h.getLength()-1; i++)
@@ -26,16 +43,17 @@ int main()
 	}
 	cout << endl;
 
-	cout <<"Array h has a length of: " << h.getLength() << endl<<endl;
+	cout << "Array h has a length of: " << h.getLength() << endl<<endl;
 	cout << "Creating Array b with Array h!" << endl;
 	Array<int> b(h);
-	cout <<"Array b has a length of: "<< b.getLength() << endl;
-	cout<< "The second element of Array b is: " << b[2]<<endl;
+	cout << "Array b has a length of: " << b.getLength() << endl;
+	cout << "The second element of Array b is: " << b[2] << endl;
 	cout << "Placing 5 in Array b[0]!" << endl;
 	b[0] = 5;
-	cout << "Array b[0] is: " << b[0]<<endl;
+	cout << "Array b[0] is: " << b[0] << endl;
+	cout << "Attempting to access an element that is out of bounds!" << endl;
 	try {
-		cout << "Attempting to access an element that is out of bounds!"<<endl << b[-3] << endl;
+		 cout << b[-3] << endl;
 	}
 	catch (const Exception& e) {
 		cout << e << endl;
@@ -55,9 +73,9 @@ int main()
 
 	for (int i = n.getStartIndex(); i < n.getLength() +n.getStartIndex(); i++)
 	{
-		cout <<n[i];
+		cout << n[i];
 	}
-	cout << endl<<endl;
+	cout << endl << endl;
 	cout << "Creating Array x and making x=n happen!" << endl;
 	Array<char> x(4, 0);
 	x = n;
