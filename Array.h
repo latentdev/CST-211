@@ -3,7 +3,7 @@
 
 template <class a_type> class Array
 {
-	protected:
+	private:
 		a_type *m_array;
 		int m_length;
 		int m_start_index;
@@ -13,10 +13,10 @@ template <class a_type> class Array
 		Array(const Array& obj);
 		~Array();
 		Array& operator=(Array& rhs);
-		Array& operator[](int index);
-		int getStartIndex();
+		a_type& operator[](int index);
+		int getStartIndex()const;
 		void setStartIndex(int start_index);
-		int getLength();
+		int getLength()const;
 		void setLength(int length);
 	
 };
