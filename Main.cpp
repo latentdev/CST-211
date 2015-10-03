@@ -7,7 +7,6 @@ using namespace std;
 
 int main()
 {
-	//cout << "Hello World" << endl;
 	Array<int> h;
 	cout << "The contents of Array h are: ";
 	for (int i = 0; i < h.getLength(); i++)
@@ -15,7 +14,6 @@ int main()
 		cout << h[i]<<",";
 	}
 	cout << endl;
-	//h.setLength(5);
 	h.setStartIndex(-1);
 	cout << "Array h start index is: " << h.getStartIndex() <<endl;
 
@@ -50,10 +48,14 @@ int main()
 	n[4] = 'c';
 	n[5] = 'k';
 
+	cout << "Will now output Array n: ";
+
 	for (int i = n.getStartIndex(); i < n.getLength() +n.getStartIndex(); i++)
 	{
-		cout << n[i] << ",";
+		char x = n[i];
+		cout << x;
 	}
 	cout << endl;
+
 	return 0;
 }

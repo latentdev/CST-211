@@ -42,7 +42,7 @@ template<class a_type>
 inline Array<a_type>::~Array()
 {
 	cout << "destroying things..." << endl;
-	//delete [] m_array;
+	delete m_array;
 
 }
 
