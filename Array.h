@@ -4,7 +4,7 @@
 template <class a_type> class Array
 {
 	protected:
-		a_type m_array;
+		a_type *m_array;
 		int m_length;
 		int m_start_index;
 	public:
