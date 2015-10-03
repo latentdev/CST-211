@@ -1,9 +1,11 @@
 #ifndef EXCEPTION_H
 #define EXCEPTION_H
+#include <iostream>
+using namespace std;
 class Exception
 {
 	private:
-		char * m_mesg;
+		char * m_msg;
 	public:
 		Exception();
 		Exception(char*in_msg);
@@ -14,6 +16,7 @@ class Exception
 
 		char* getMessage();
 		void setMessage(char* in_msg);
-		ostream& operator<<(ostream & in_stream,)
+		friend ostream& operator<<(ostream & in_stream, const Exception&);
 };
 #endif
+
