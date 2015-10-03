@@ -40,7 +40,7 @@ int main()
 	}
 
 	cout << "Creating Array n with an start index of 2 and a length of 4" << endl;
-	Array<int> n(4, 2);
+	Array<char> n(4, 2);
 	cout << "Array n has a starting index of: " << n.getStartIndex() << " and a length of: " << n.getLength() << endl;
 	cout << "Filling out Array n with Nick!" << endl;
 	n[2] = 'n';
@@ -52,8 +52,16 @@ int main()
 
 	for (int i = n.getStartIndex(); i < n.getLength() +n.getStartIndex(); i++)
 	{
-		char x = n[i];
-		cout << x;
+		cout <<n[i];
+	}
+	cout << endl;
+	cout << "Creating Array x and making x=n happen!" << endl;
+	Array<char> x(4, 0);
+	x = n;
+	cout << "Will now output Array x : ";
+	for (int i = x.getStartIndex(); i < x.getLength() + x.getStartIndex(); i++)
+	{
+		cout << x[i];
 	}
 	cout << endl;
 

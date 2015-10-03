@@ -49,6 +49,7 @@ inline Array<a_type>::~Array()
 template<class a_type>
 Array<a_type>& Array<a_type> ::operator=(Array & rhs)
 {
+	cout << "Equals operator is happening!" << endl;
 	m_start_index = rhs.getStartIndex();
 	m_length = rhs.getLength();
 	delete [] m_array;
@@ -57,6 +58,7 @@ Array<a_type>& Array<a_type> ::operator=(Array & rhs)
 	{
 		m_array[i] = rhs.m_array[i];
 	}
+	return *this;
 	
 }
 
