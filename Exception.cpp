@@ -38,12 +38,20 @@ Exception::Exception(const Exception & in_copy)
 		m_msg[i] = in_copy.m_msg[i];
 	}
 }
-
+/**************************************************************
+*default destructor
+***************************************************************/
 Exception::~Exception()
 {
 	delete m_msg;
 }
 
+/*************************************************************
+*overloaded = operator
+*creates a new array for m_msg
+*does a deep copy of in_rhs.m_msg into m_msg
+*returns this object
+**************************************************************/
 Exception & Exception::operator=(const Exception & in_rhs)
 {
 	m_msg = new char[strlen(in_rhs.m_msg)];
@@ -54,11 +62,21 @@ Exception & Exception::operator=(const Exception & in_rhs)
 	return *this;
 }
 
+/*************************************************************
+*Getter for m_msg
+* returns m_msg
+**************************************************************/
 char * Exception::getMessage()
 {
 	return m_msg;
 }
 
+/************************************************************
+*Setter for m_msg
+*Deletes current m_msg
+*creates a new character array for m_msg the length of in_msg
+*does a deep copy of in_msg to m_msg
+*************************************************************/
 void Exception::setMessage(char * in_msg)
 {
 	delete m_msg;
@@ -68,7 +86,11 @@ void Exception::setMessage(char * in_msg)
 		m_msg[i] = in_msg[i];
 	}
 }
-
+/**********************************************************
+*operator overload for <<
+*allows us to pass a an exception to the ostream to be outputted
+*returns the passed in exceptions message
+***********************************************************/
 ostream & operator<<(ostream & in_stream, const Exception& in_except)
 {
 	return in_stream << in_except.m_msg;
