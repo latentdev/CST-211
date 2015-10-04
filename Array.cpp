@@ -144,7 +144,11 @@ int Array<a_type>::getLength()const
 }
 
 /*************************************************
-*
+*Setter for m_length
+*creates a temp pointer a_type and points it at a new array of passed in length
+* then checks which is shorter so we only loop as many times as needed
+*then fill the temp array with the m_array
+* deletes m_array and then points m_array at the temp array
 **************************************************/
 template<class a_type>
 void Array<a_type>::setLength(int length)

@@ -1,9 +1,19 @@
 #include "Exception.h"
-
+/************************************
+*Default Constructor
+*Does nothing
+*************************************/
 Exception::Exception()
 {
 }
 
+/************************************
+*Parameterized Constructor
+*stores the size of in_msg in bytes in length
+*creates a new array of size length+1
+*does a deep copy of in_msg into m_msg
+*adds a null to the end of m_msg
+*************************************/
 Exception::Exception(char * in_msg)
 {
 	size_t length = strlen(in_msg);
@@ -15,6 +25,11 @@ Exception::Exception(char * in_msg)
 	m_msg[length] = '\0';
 }
 
+/**************************************************************
+*Copy Constructor
+*copy constructor
+*creates a new array for m_msg and does a deep copy of in_copy
+***************************************************************/
 Exception::Exception(const Exception & in_copy)
 {
 	m_msg = new char[strlen(in_copy.m_msg)];
