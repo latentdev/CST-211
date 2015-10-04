@@ -1,0 +1,15 @@
+1. What are the considerations you had to include in your operator= function?
+
+I had to make sure I released the memory the m_message was pointing at before changing the pointer. Made sure to do a deep copy so I created a new array and copied the value at every element of the passed in Array objects m_array. 
+
+2. What is the similarity and difference between copy constructor and operator= functions?
+
+A copy constructor is used to initialize a previously uninitialized object from another objects data. Operator= is used to replace the data of an already initialized object with the data of another object. This means that in the assignment operator I have to make sure to release the data at m_array before pointing it at something new.
+
+3. What steps did you take to ensure no memory leaks?
+
+I made sure both the Array class and the Exception class had proper destructors that released m_array and m_msg respectively. Also when assigning something new to m_array or m_msg after it had already been initialized I made sure to release the memory before assigning the new data.
+
+4. In terms of big O how long would it take to find an element of this array? How could this be improved? what would the expression become?
+
+O(n). It could be improved if we sorted the array, Then we simply compare what we are searching for to the middle element. Each check will cut the possible elements in half. O(log n).
